@@ -15,15 +15,17 @@ export class NewUserFormComponent implements OnInit {
     userName: '',
     firstName: '',
     lastName: '',
-    passowrd: '',
+    password: '',
     phone: '',
     email: ''
   }
 
-  constructor(private usersService: UsersService, private router: Router) { }
+  constructor(private usersService: UsersService, 
+              private router: Router) { }
 
   ngOnInit() {
   }
+  
 
   createUser() {
       this.usersService.addNewUser(this.user)

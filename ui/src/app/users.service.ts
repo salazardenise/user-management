@@ -15,7 +15,7 @@ export class UsersService {
         "userName": user.userName,
         "firstName": user.firstName,
         "lastName": user.lastName,
-        "password": user.passowrd,
+        "password": user.password,
         "phone": user.phone,
         "email": user.email
       }
@@ -24,6 +24,10 @@ export class UsersService {
 
   getUsers() {
     return this.httpClient.get<User[]>('/api/users');
+  }
+
+  getUser(userId: number) {
+    return this.httpClient.get<User>(`/api/users/${userId}`)
   }
 
   deleteUser(userId: number) {
@@ -35,7 +39,7 @@ export class UsersService {
       "firstName": user.firstName,
       "lastName": user.lastName,
       "userName": user.userName,
-      "password": user.passowrd,
+      "password": user.password,
       "phone": user.phone,
       "email": user.email
     });

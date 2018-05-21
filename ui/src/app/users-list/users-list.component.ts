@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {UsersService} from '../users.service';
 import {User} from '../types/user';
-import {Router} from '@angular/router';
+import {Router, NavigationExtras} from '@angular/router';
 
 @Component({
   selector: 'app-users-list',
@@ -29,9 +29,12 @@ export class UsersListComponent implements OnInit {
   }
 
   goToUpdateForm(user: User) {
-    /*
-    this.router.navigate(['/update', { user}]);
-    */
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+          "user_id": user.id
+      }
+    };
+    this.router.navigate(['/update'], navigationExtras);
   }
 
 }
