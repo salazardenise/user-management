@@ -8,6 +8,7 @@ import { UsersListComponent } from './users-list/users-list.component';
 import {RouterModule, Routes} from '@angular/router';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import {FormsModule} from '@angular/forms';
+import { UpdateUserFormComponent } from './update-user-form/update-user-form.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,10 @@ const routes: Routes = [
   {
     path: 'new',
     component: NewUserFormComponent
+  },
+  {
+    path: 'update',
+    component: UpdateUserFormComponent
   }
 ]
 
@@ -25,7 +30,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     UsersListComponent,
-    NewUserFormComponent
+    NewUserFormComponent,
+    UpdateUserFormComponent
   ],
   imports: [
     BrowserModule,

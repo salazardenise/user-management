@@ -1,0 +1,69 @@
+<div id="new-user-form-wrapper">
+  <a id="home" routerLink="/">Home</a>
+  <h2>Update User</h2>
+  <form id="update-user-form" (ngSubmit)="updateTheUser()">
+
+      <div>
+        <label for="update-user-user-name">Username </label>
+        <input
+          id="update-user-user-name"
+          type="text"
+          name="userName"
+          [(ngModel)]="user.userName" />
+      </div>
+    
+      <div>
+        <label for="update-user-first-name">First Name </label>
+        <input
+          id="update-user-first-name"
+          type="text"
+          name="firstName"
+          [(ngModel)]="user.firstName" />
+      </div>
+    
+      <div>
+        <label for="update-user-last-name">Last Name </label>
+        <input
+          id="update-user-last-name"
+          type="text"
+          name="lastName"
+          [(ngModel)]="user.lastName" />
+      </div>
+
+      <div>
+          <label for="update-user-password">Password </label>
+          <input
+            id="update-user-password"
+            type="text"
+            name="password"
+            [(ngModel)]="user.password" />
+        </div>
+
+        <div>
+            <label for="update-user-phone">Phone </label>
+            <input
+              id="update-user-phone"
+              type="text"
+              name="phone"
+              [(ngModel)]="user.phone" />
+          </div>
+
+          <div>
+              <label for="update-user-email">Email </label>
+              <input
+                id="update-user-email"
+                type="text"
+                name="email"
+                [(ngModel)]="user.email" />
+            </div>
+    
+      <div>
+        <input
+          id="update-user-submit"
+          type="submit"
+          value="Update"
+          />
+      </div>
+    
+    </form>
+  </div>
