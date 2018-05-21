@@ -3,19 +3,17 @@
   <h2>Users</h2>
   <div *ngFor="let user of users; index as i">
     <div id={{user.id}} data-user-display>
-      <div id="user-{{user.id}}-user-name">
-        {{user.userName}}
-      </div>
+      <div id="userNameAndFullName">
+        <div id="user-{{user.id}}-user-name">
+          Username: {{user.userName}}
+        </div>
 
-      <div id="user-{{user.id}}-first-name">
-        {{user.firstName}}
-      </div>
-
-      <div id="user-{{user.id}}-last-name">
-        {{user.lastName}}
-      </div>
-
-      <button
+        <div id="user-{{user.id}}-full-name">
+          Full name: {{user.firstName}} {{user.lastName}}
+        </div>
+     </div>
+     <br>
+     <button
         id="delete-user-{{user.id}}"
         (click)="deleteUser(user.id, i)">
         Delete
@@ -25,6 +23,8 @@
         (click)="goToUpdateForm(user)">
         Update
       </button>
+      <br>
+      <br>
     </div>
   </div>
 </div>
