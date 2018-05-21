@@ -11,7 +11,14 @@ export class UsersService {
   addNewUser(user: User) {
     return this.httpClient.post<User>(
       '/api/users',
-      user
+      {
+        "userName": user.userName,
+        "firstName": user.firstName,
+        "lastName": user.lastName,
+        "password": user.passowrd,
+        "phone": user.phone,
+        "email": user.email
+      }
     );
   }
 
