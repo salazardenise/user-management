@@ -1,8 +1,13 @@
 package com.example.usermanagement.models;
 
 import org.junit.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.junit.runner.RunWith;
+import org.springframework.test.context.junit4.SpringRunner;
 import static org.junit.Assert.*;
 
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class UserTest {
 
     @Test
