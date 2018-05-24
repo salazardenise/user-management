@@ -3,3 +3,10 @@
     text-align: left;
     /*background-color: blue;*/
 }
+.table-users tbody tr:hover {
+	cursor: pointer;
+	background-color: #eee;
+}
+.user_panel {
+    width: 80%;
+}

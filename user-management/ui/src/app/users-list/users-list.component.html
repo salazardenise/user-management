@@ -1,30 +1,63 @@
 <div id="users-wrapper">
-  <a id="new-user-link" routerLink="/new">Create User</a>
-  <h2>Users</h2>
-  <div *ngFor="let user of users; index as i">
-    <div id={{user.id}} data-user-display>
-      <div id="userNameAndFullName">
-        <div id="user-{{user.id}}-user-name">
-          Username: {{user.userName}}
-        </div>
+  <!--<a id="new-user-link" routerLink="/new">Create User</a>-->
+  <!-- users list template used from https://bootsnipp.com/snippets/kv8XQ-->
+  <div class="container">
+    <div class="row">
+      <div class="panel panel-default user_panel"  style="margin: 0 auto;">
+          <div class="panel-heading">
+              <h2 class="panel-title" style="text-align: left;">Users</h2>
+          </div>
+          <div class="panel-body">
+            <div class="table-container">
+                <table class="table-users table" border="0">
+                  <tbody>
+                    <tr *ngFor="let user of users; index as i">
+                        <div id={{user.id}} data-user-display>
 
-        <div id="user-{{user.id}}-full-name">
-          Full name: {{user.firstName}} {{user.lastName}}
-        </div>
-     </div>
-     <br>
-     <button
-        id="delete-user-{{user.id}}"
-        (click)="deleteUser(user.id, i)">
-        Delete
-      </button>
-      <button
-        id="update-user-{{user.id}}"
-        (click)="goToUpdateForm(user)">
-        Update
-      </button>
-      <br>
-      <br>
+                              <td width="30" align="center">
+                                  <i class="fas fa-user"></i>
+                              </td>
+                              <td width="250" style="text-align: left;">
+                                <div id="user-{{user.id}}-full-name">
+                                    {{user.firstName}} {{user.lastName}}
+                                </div>
+                              </td>
+                              <td width="250" style="text-align: left;">
+                                <div id="user-{{user.id}}-user-name">
+                                  {{user.userName}}
+                                </div>
+                              </td>
+                              <td>
+                                <i 
+                                  id="delete-user-{{user.id}}"
+                                  (click)="deleteUser(user.id, i)"
+                                  class="fas fa-trash-alt"
+                                  style="color: maroon">
+                                </i>
+                              </td>
+                              <td>
+                                  <i 
+                                    class="fas fa-edit"
+                                    id="update-user-{{user.id}}"
+                                   (click)="goToUpdateForm(user)">
+                                  </i>
+                              </td>
+
+
+                        </div>
+                      </tr>
+
+                  </tbody>
+                </table>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
+
+
+  
+  
+
+
 </div>
