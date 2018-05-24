@@ -1,75 +1,84 @@
 <div id="new-user-form-wrapper">
-  <a id="home" routerLink="/">Home</a>
+  <!--<a id="home" routerLink="/">Home</a>-->
   <h2>Update User</h2>
-  <form id="update-user-form" (ngSubmit)="updateTheUser()">
-
-    <div>
-      <label for="update-user-user-name">Username </label>
-      <input
-        id="update-user-user-name"
-        type="text"
-        name="userName"
-        [(ngModel)]="user.userName" />
-    </div>
-  
-    <div>
-      <label for="update-user-first-name">First Name </label>
-      <input
-        id="update-user-first-name"
-        type="text"
-        name="firstName"
-        [(ngModel)]="user.firstName" />
-    </div>
-  
-    <div>
-      <label for="update-user-last-name">Last Name </label>
-      <input
-        id="update-user-last-name"
-        type="text"
-        name="lastName"
-        [(ngModel)]="user.lastName" />
-    </div>
-
-    <div>
-        <label for="update-user-password">Password </label>
-        <input
-          id="update-user-password"
-          type="text"
-          name="password"
-          [(ngModel)]="user.password" />
-     </div>
-
-    <div>
-        <label for="update-user-phone">Phone </label>
-        <input
-          id="update-user-phone"
-          type="text"
-          name="phone"
-          [(ngModel)]="user.phone" />
-    </div>
-
-    <div>
-        <label for="update-user-email">Email </label>
-        <input
-          id="update-user-email"
-          type="text"
-          name="email"
-          [(ngModel)]="user.email" />
+  <form id="update-user-form" (ngSubmit)="updateTheUser()" autocomplete="on">
+      <div class="form-row justify-content-center">
+        <div class="col-sm-5">
+          <label for="update-user-user-name">Username </label>
+          <input
+            id="update-user-user-name"
+            type="text"
+            name="userName"
+            class="form-control"
+            [(ngModel)]="user.userName" />
+        </div>
+        <div class="col-sm-5">
+            <label for="update-user-password">Password </label>
+            <input
+              id="update-user-password"
+              type="text"
+              name="password"
+              class="form-control"
+              [(ngModel)]="user.password" />
+          </div>
       </div>
-
-      <div>
+      <div class="form-row justify-content-center">
+          <div class="col-sm-5">
+              <label for="update-user-first-name">First Name </label>
+              <input
+                id="update-user-first-name"
+                type="text"
+                name="firstName"
+                class="form-control"
+                autocomplete="given-name"
+                [(ngModel)]="user.firstName" />
+            </div>
+            <div class="col-sm-5">
+              <label for="update-user-last-name">Last Name </label>
+              <input
+                id="update-user-last-name"
+                type="text"
+                name="lastName"
+                class="form-control"
+                autocomplete="family-name"
+                [(ngModel)]="user.lastName" />
+            </div>
+      </div>
+      <div class="form-row justify-content-center">
+          <div class="col-sm-5">
+              <label for="update-user-phone">Phone </label>
+              <input
+                id="update-user-phone"
+                type="text"
+                name="phone"
+                class="form-control"
+                autocomplete="tel-national"
+                [(ngModel)]="user.phone" />
+          </div>
+          <div class="col-sm-5">
+              <label for="update-user-email">Email </label>
+              <input
+                id="update-user-email"
+                type="text"
+                name="email"
+                class="form-control"
+                autocomplete="email"
+                [(ngModel)]="user.email" />
+            </div>
+      </div>
+      <br>
+      <div class="form-row justify-content-center">
         <input
           id="update-user-submit"
           type="submit"
           value="Update"
           />
+          &nbsp;&nbsp;&nbsp;
+          <button
+          id="delete-user-{{user.id}}"
+          (click)="deleteTheUser(user.id)">
+          Delete
+      </button>
       </div>
-    
     </form>
-    <button
-        id="delete-user-{{user.id}}"
-        (click)="deleteTheUser(user.id)">
-        Delete
-    </button>
-
   </div>

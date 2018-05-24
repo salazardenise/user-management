@@ -1,70 +1,79 @@
 <div id="new-user-form-wrapper">
-  <a id="home" routerLink="/">Home</a>
+  <!--<a id="home" routerLink="/">Home</a>-->
   <h2>Create New User</h2>
   <div>All fields required</div>
-  <form id="new-user-form" (ngSubmit)="createUser()">
-
-    <div>
-      <label for="new-user-user-name">Username </label>
-      <input
-        id="new-user-user-name"
-        type="text"
-        name="userName"
-        [(ngModel)]="user.userName" />
+  <form id="new-user-form" (ngSubmit)="createUser()" autocomplete="on">
+    <div class="form-row justify-content-center">
+        <div class="col-md-5">
+            <label for="new-user-user-name">Username </label>
+            <input
+              id="new-user-user-name"
+              type="text"
+              name="userName"
+              class="form-control"
+              [(ngModel)]="user.userName" />
+          </div>
+          <div class="col-md-5">
+            <label for="new-user-password">Password </label>
+            <input
+              id="new-user-password"
+              type="text"
+              name="password"
+              class="form-control"
+              [(ngModel)]="user.password"/>
+          </div>
     </div>
-
-    <div>
-      <label for="new-user-first-name">First Name </label>
-      <input
-        id="new-user-first-name"
-        type="text"
-        name="firstName"
-        [(ngModel)]="user.firstName" />
+    <div class="form-row justify-content-center">
+        <div class="col-md-5">
+          <label for="new-user-first-name">First Name </label>
+          <input
+            id="new-user-first-name"
+            type="text"
+            name="firstName"
+            class="form-control"
+            autocomplete="given-name"
+            [(ngModel)]="user.firstName" />
+        </div>
+        <div class="col-md-5">
+          <label for="new-user-last-name">Last Name </label>
+          <input
+            id="new-user-last-name"
+            type="text"
+            name="lastName"
+            class="form-control"
+            autocomplete="family-name"
+            [(ngModel)]="user.lastName" />
+        </div>
     </div>
-
-    <div>
-      <label for="new-user-last-name">Last Name </label>
-      <input
-        id="new-user-last-name"
-        type="text"
-        name="lastName"
-        [(ngModel)]="user.lastName" />
-    </div>
-
-    <div>
-      <label for="new-user-password">Password </label>
-      <input
-        id="new-user-password"
-        type="text"
-        name="password"
-        [(ngModel)]="user.password"/>
-    </div>
-
-    <div>
-        <label for="new-user-phone">Phone </label>
-        <input
-          id="new-user-phone"
-          type="text"
-          name="phone"
-          [(ngModel)]="user.phone"/>
-    </div>
-
-    <div>
-        <label for="new-user-email">Email </label>
-        <input
-          id="new-user-email"
-          type="text"
-          name="email"
-          [(ngModel)]="user.email"/>
+    <div class="form-row justify-content-center">
+      <div class="col-md-5">
+          <label for="new-user-phone">Phone </label>
+          <input
+            id="new-user-phone"
+            type="tel"
+            name="phone"
+            class="form-control"
+            autocomplete="tel-national"
+            [(ngModel)]="user.phone"/>
       </div>
-
-    <div>
-      <input
-        id="new-user-submit"
-        type="submit"
-        value="Create"
-        />
+      <div class="col-md-5">
+          <label for="new-user-email">Email </label>
+          <input
+            id="new-user-email"
+            type="email"
+            name="email"
+            class="form-control"
+            autocomplete="email"
+            [(ngModel)]="user.email"/>
+      </div>
     </div>
-
+    <br>
+    <div class="form-row justify-content-center">
+          <input
+            id="new-user-submit"
+            type="submit"
+            value="Create"
+            />
+    </div>
   </form>
 </div>
