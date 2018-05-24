@@ -9,6 +9,8 @@ import {RouterModule, Routes} from '@angular/router';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import {FormsModule} from '@angular/forms';
 import { UpdateUserFormComponent } from './update-user-form/update-user-form.component';
+import { ScoresListComponent } from './scores-list/scores-list.component';
+import { ScoresListService } from './scores-list/scores-list.service';
 
 
 const routes: Routes = [
@@ -23,6 +25,10 @@ const routes: Routes = [
   {
     path: 'update',
     component: UpdateUserFormComponent
+  },
+  {
+    path: 'scores',
+    component: ScoresListComponent
   }
 ]
 
@@ -31,7 +37,8 @@ const routes: Routes = [
     AppComponent,
     UsersListComponent,
     NewUserFormComponent,
-    UpdateUserFormComponent
+    UpdateUserFormComponent,
+    ScoresListComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +46,8 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule
   ],
-  providers: [UsersService],
+  providers: [UsersService,
+              ScoresListService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
