@@ -57,7 +57,7 @@ export class UpdateUserFormComponent implements OnInit {
       });
   }
 
-  deleteTheUser(idToDelete: number) {
+  deleteTheUser(idToDelete: any) {
     this.usersService.deleteUser(idToDelete)
       .subscribe((response) => {
         this.router.navigate(['/']);
