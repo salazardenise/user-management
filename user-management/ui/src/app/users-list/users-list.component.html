@@ -15,6 +15,7 @@
                         <div id={{user.id}} data-user-display>
 
                               <td width="30" align="center">
+                                  <!-- using user icon from font-awesome -->
                                   <i class="fas fa-user"></i>
                               </td>
                               <td width="250" style="text-align: left;">
@@ -28,6 +29,7 @@
                                 </div>
                               </td>
                               <td>
+                                <!-- using delete icon from font-awesome -->
                                 <i 
                                   id="delete-user-{{user.id}}"
                                   (click)="deleteUser(user.id, i)"
@@ -36,6 +38,7 @@
                                 </i>
                               </td>
                               <td>
+                                <!-- using edit icon from font-awesome -->
                                   <i 
                                     class="fas fa-edit"
                                     id="update-user-{{user.id}}"
@@ -54,10 +57,5 @@
       </div>
     </div>
   </div>
-
-
-  
-  
-
 
 </div>

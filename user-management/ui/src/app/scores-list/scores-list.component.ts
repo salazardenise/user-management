@@ -16,7 +16,12 @@ export class ScoresListComponent implements OnInit {
   ngOnInit() {
       this.searchService.getScores()
       .subscribe((response) => {
-        this.scores = response});
+        this.scores = response,
+        this.createHistogram()});
+  }
+
+  createHistogram() {
+    console.log('create the histogram!');
   }
 
 }
