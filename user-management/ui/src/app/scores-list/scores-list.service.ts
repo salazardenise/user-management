@@ -6,7 +6,7 @@ import {Score} from './../types/score';
 @Injectable()
 export class ScoresListService {
 
-    sats_2012_url = 'https://data.cityofnewyork.us/resource/734v-jeq5.json';
+    sats_2012_url = 'https://data.cityofnewyork.us/resource/734v-jeq5.json?$limit=10';
     
     constructor(private http: HttpClient) {
     }

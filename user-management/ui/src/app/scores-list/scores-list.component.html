@@ -1,3 +1,44 @@
-<p>
-  scores-list works!
-</p>
+<div id="scores-wrapper">
+  <p>scores-list visual goes here!</p>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+      <caption style="caption-side: top;" >2012 SAT Scores</caption>
+      <thead>
+        <th># of SAT takers</th>
+        <th>SAT Crticial Reading Average Score</th>
+        <th>SAT Math Average Score</th>
+        <th>SAT Writing Average Score</th>
+        <th>School Name</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let score of scores;">
+          <td>
+            <div id="score-{{score.dbn}}-num_of_sat_test_takers">
+                {{score.num_of_sat_test_takers}}
+            </div>
+          </td>
+          <td>
+            <div id="score-{{score.dbn}}-sat_critical_reading_avg_score">
+                {{score.sat_critical_reading_avg_score}}
+            </div>
+          </td>
+          <td>
+            <div id="score-{{score.dbn}}-sat_math_avg_score">
+                {{score.sat_math_avg_score}}
+            </div>
+          </td>
+          <td>
+            <div id="score-{{score.dbn}}-sat_writing_avg_score">
+                {{score.sat_writing_avg_score}}
+            </div>
+          </td>
+          <td>
+            <div id="score-{{score.dbn}}-school_name" style="text-align: left">
+                {{score.school_name}}
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
