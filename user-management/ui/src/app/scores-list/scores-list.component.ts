@@ -22,7 +22,7 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./scores-list.component.css']
 })
 export class ScoresListComponent implements OnInit {
-
+  p: number = 1;
   scores: Score[];
   /*
   score1 = {dbn: '01M292',

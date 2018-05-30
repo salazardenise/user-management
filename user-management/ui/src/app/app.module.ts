@@ -11,11 +11,14 @@ import {FormsModule} from '@angular/forms';
 import { UpdateUserFormComponent } from './update-user-form/update-user-form.component';
 import { ScoresListComponent } from './scores-list/scores-list.component';
 import { ScoresListService } from './scores-list/scores-list.service';
+// used d3-ng2-service library for injecting d3 service into angular (ref: https://www.npmjs.com/package/d3-ng2-service)
 import { D3Service } from 'd3-ng2-service';
 import { ScoresVisualComponent } from './scores-visual/scores-visual.component';
 import { ScoresVisualMathComponent } from './scores-visual-math/scores-visual-math.component';
 import { ScoresVisualWritingComponent } from './scores-visual-writing/scores-visual-writing.component';
 import { ScoresListResolve } from './scores-list/scores-list.resolve.service';
+// used ngx-pagination library for pagination (ref: https://www.npmjs.com/package/ngx-pagination)
+import {NgxPaginationModule} from 'ngx-pagination';
 
 const routes: Routes = [
   {
@@ -54,7 +57,8 @@ const routes: Routes = [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
+    NgxPaginationModule
   ],
   providers: [UsersService,
               ScoresListService,
