@@ -11,7 +11,10 @@ import {FormsModule} from '@angular/forms';
 import { UpdateUserFormComponent } from './update-user-form/update-user-form.component';
 import { ScoresListComponent } from './scores-list/scores-list.component';
 import { ScoresListService } from './scores-list/scores-list.service';
-
+import { D3Service } from 'd3-ng2-service';
+import { ScoresVisualComponent } from './scores-visual/scores-visual.component';
+import { ScoresVisualMathComponent } from './scores-visual-math/scores-visual-math.component';
+import { ScoresVisualWritingComponent } from './scores-visual-writing/scores-visual-writing.component';
 
 const routes: Routes = [
   {
@@ -38,7 +41,10 @@ const routes: Routes = [
     UsersListComponent,
     NewUserFormComponent,
     UpdateUserFormComponent,
-    ScoresListComponent
+    ScoresListComponent,
+    ScoresVisualComponent,
+    ScoresVisualMathComponent,
+    ScoresVisualWritingComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,8 @@ const routes: Routes = [
     FormsModule
   ],
   providers: [UsersService,
-              ScoresListService],
+              ScoresListService,
+              D3Service],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
