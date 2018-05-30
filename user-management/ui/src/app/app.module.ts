@@ -15,6 +15,7 @@ import { D3Service } from 'd3-ng2-service';
 import { ScoresVisualComponent } from './scores-visual/scores-visual.component';
 import { ScoresVisualMathComponent } from './scores-visual-math/scores-visual-math.component';
 import { ScoresVisualWritingComponent } from './scores-visual-writing/scores-visual-writing.component';
+import { ScoresListResolve } from './scores-list/scores-list.resolve.service';
 
 const routes: Routes = [
   {
@@ -31,7 +32,10 @@ const routes: Routes = [
   },
   {
     path: 'scores',
-    component: ScoresListComponent
+    component: ScoresListComponent,
+    resolve: {
+      scores: ScoresListResolve
+    }
   }
 ]
 
@@ -54,7 +58,8 @@ const routes: Routes = [
   ],
   providers: [UsersService,
               ScoresListService,
-              D3Service],
+              D3Service,
+              ScoresListResolve],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
