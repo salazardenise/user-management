@@ -1,3 +1,4 @@
+import { VenuesService } from './venues/venues.service';
 import { UsersService } from './users.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -19,6 +20,7 @@ import { ScoresVisualWritingComponent } from './scores-visual-writing/scores-vis
 import { ScoresListResolve } from './scores-list/scores-list.resolve.service';
 // used ngx-pagination library for pagination (ref: https://www.npmjs.com/package/ngx-pagination)
 import {NgxPaginationModule} from 'ngx-pagination';
+import { VenuesComponent } from './venues/venues.component';
 
 const routes: Routes = [
   {
@@ -39,6 +41,10 @@ const routes: Routes = [
     resolve: {
       scores: ScoresListResolve
     }
+  },
+  {
+    path: 'venues',
+    component: VenuesComponent
   }
 ]
 
@@ -51,7 +57,8 @@ const routes: Routes = [
     ScoresListComponent,
     ScoresVisualComponent,
     ScoresVisualMathComponent,
-    ScoresVisualWritingComponent
+    ScoresVisualWritingComponent,
+    VenuesComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +70,8 @@ const routes: Routes = [
   providers: [UsersService,
               ScoresListService,
               D3Service,
-              ScoresListResolve],
+              ScoresListResolve,
+              VenuesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
