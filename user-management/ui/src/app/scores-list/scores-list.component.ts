@@ -71,8 +71,10 @@ export class ScoresListComponent implements OnInit {
       .subscribe((response) => {
         this.scores = response});  
         */
+       
       this.route.data.subscribe((data: {scores : Score[]}) => {
         this.scores = data.scores;
       })
+      
   }
 }

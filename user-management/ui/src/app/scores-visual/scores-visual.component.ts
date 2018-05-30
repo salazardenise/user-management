@@ -50,8 +50,8 @@ export class ScoresVisualComponent implements OnInit {
                 '#0077D4', '	#00D8BB', '#00DC41', '#3DE000', '#C1E500'];
       
       var schoolNames = topTenReadingScores.map(score => score.school_name);
-      var margin = {top: 40, right: 20, bottom: 50, left: 400};
-      var fullWidth = 700;
+      var margin = {top: 40, right: 10, bottom: 50, left: 450};
+      var fullWidth = 800;
       var fullHeight = 200;
       var width = fullWidth - margin.right - margin.left;
       var height = fullHeight - margin.top - margin.bottom;
