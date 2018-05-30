@@ -14,7 +14,7 @@ import {
   Selection,
   Transition
 } from 'd3-ng2-service';
-import { Observable } from 'rxjs';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-scores-list',
@@ -23,7 +23,6 @@ import { Observable } from 'rxjs';
 })
 export class ScoresListComponent implements OnInit {
 
-  scoresObservable: Observable<Score[]>
   scores: Score[];
   /*
   score1 = {dbn: '01M292',
@@ -62,12 +61,18 @@ export class ScoresListComponent implements OnInit {
             school_name: 'MARTA VALLE HIGH SCHOOL'};
   scores = [this.score1, this.score2, this.score3, this.score4, this.score5];
   */
-  constructor(private searchService: ScoresListService) {
+  constructor(private searchService: ScoresListService,
+              private route: ActivatedRoute,) {
    }
 
   ngOnInit() {
+    /*
       this.searchService.getScores()
       .subscribe((response) => {
         this.scores = response});  
+        */
+      this.route.data.subscribe((data: {scores : Score[]}) => {
+        this.scores = data.scores;
+      })
   }
 }

@@ -1,14 +1,12 @@
 <div id="scores-wrapper">
 
-    <!--<div *ngIf="scores | async; let scores; else loading">-->
       <div>Top 10 Critical Reading SAT Scores</div>
       <app-scores-visual [scores]="scores"></app-scores-visual>
       <div>Top 10 Math SAT Scores</div>
       <app-scores-visual-math [scores]="scores"></app-scores-visual-math>
       <div>Top 10 Writing SAT Scores</div>
       <app-scores-visual-writing [scores]="scores"></app-scores-visual-writing>
-    <!--</div>-->
-    <!--<ng-template #loading>Loading Scores Data...</ng-template>-->
+
 <!--
   <div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -46,7 +44,7 @@
       </a>
     </div>
   </div>
-  -->
+--> 
 
   <div class="table-responsive">
     <table class="table table-striped table-hover">
