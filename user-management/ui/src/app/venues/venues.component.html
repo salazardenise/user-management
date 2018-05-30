@@ -1,0 +1,46 @@
+<div id="venues-wrapper">
+  <div>Map goes here!</div>
+  <div class="table-responsive">
+    <table class="table table-striped table-hover">
+        <caption style="caption-side: top;">Times Square Entertainmet Venues</caption>
+        <thead>
+          <th>Company</th>
+          <th>Industry</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Website</th>
+        </thead>
+        <tbody>
+          <tr *ngFor="let venue of venues | paginate: { itemsPerPage: 10, currentPage: p }">
+            <td>
+              <div id="venue-{{bin}}-company_name" style="text-align: left">
+                  {{venue.company_name}}
+              </div>
+            </td>
+            <td>
+              <div id="venue-{{bin}}-subindustry" style="text-align: left">
+                  {{venue.subindustry}}
+              </div>
+            </td>
+            <td>
+              <div id="venue-{{bin}}-address" style="text-align: left">
+                  {{venue.address}}
+              </div>
+            </td>
+            <td>
+              <div id="venue-{{bin}}-phone" style="text-align: left">
+                  {{venue.phone}}
+              </div>
+            </td>
+            <td>
+              <div id="venue-{{bin}}-website" style="text-align: left">
+                  {{venue.website}}
+              </div>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
+
+</div>
