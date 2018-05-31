@@ -1,5 +1,8 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Marker } from './../types/marker';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
+// followed Medium post at https://medium.com/@balramchavan/integrating-google-maps-in-angular-5-ca5f68009f29 to set up maps api
 import { } from '@types/googlemaps';
+import { Venue } from '../types/venue';
 
 @Component({
   selector: 'app-venues-map',
@@ -9,20 +12,54 @@ import { } from '@types/googlemaps';
 export class VenuesMapComponent implements OnInit {
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
-
-  latitude: any;
-  longitude: any;
+  @Input() venues: Venue[];
 
   constructor() { }
 
   ngOnInit() {
-    //console.log("gmap: " + this.gmapElement)
+    var timesSquare = {lat: 40.758896, lng: -73.985130};
     var mapProp = {
-      center: new google.maps.LatLng(18.5793, 73.8143),
-      zoom: 8,
+      center: new google.maps.LatLng(timesSquare.lat, timesSquare.lng),
+      zoom: 17,
       mapTypeId: google.maps.MapTypeId.ROADMAP
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
+    this.addMarkers();
   }
+
+  addMarkers() {
+    var i, markerPosition, markerToMap;
+    var goldStar = {
+      path: 'M 100 100 L 300 100 L 200 300 z',
+      fillColor: 'purple',
+      fillOpacity: 0.8,
+      scale: 0.1,
+      strokeColor: 'black',
+      strokeWeight: 2
+    };
+    for (i = 0; i < this.venues.length; i++) {
+      markerToMap = new google.maps.Marker({
+        position: {lat: this.venues[i].latitude, lng: this.venues[i].longitude}, 
+        map: this.map,
+        animation: google.maps.Animation.DROP,
+        //icon: image,
+        icon: goldStar,
+        title: this.venues[i].company_name});
+      markerToMap.setMap(this.map);
+      var contentString = '<h3>'+ this.venues[i].company_name+ '</h3>' +
+                          '<div>' + this.venues[i].subindustry + '</div>';
+      var infowindow = new google.maps.InfoWindow({
+        content: contentString
+      });
+      google.maps.event.addListener(markerToMap,'click', (function(markerToMap, contentString, infowindow) {
+        return function() {
+          infowindow.setContent(contentString);
+          infowindow.open(this.map,markerToMap);
+        };
+      })(markerToMap, contentString, infowindow));
+    }
+  }
+
+  
 
 }

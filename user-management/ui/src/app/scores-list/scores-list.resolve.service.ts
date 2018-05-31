@@ -5,7 +5,7 @@ import {
     ActivatedRouteSnapshot,
     RouterStateSnapshot
 } from '@angular/router';
-import {Score} from './../types/score';
+import { Score } from './../types/score';
 import { ScoresListService } from './scores-list.service';
 
 // used Angular documentation for Resolve to set this up
