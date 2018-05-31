@@ -55,13 +55,15 @@ export class ScoresVisualComponent implements OnInit {
       var fullHeight = 200;
       var width = fullWidth - margin.right - margin.left;
       var height = fullHeight - margin.top - margin.bottom;
-      var svg = d3.select(this.parentNativeElement).append('svg')
+
+      var svg = d3.select(this.parentNativeElement)
+        .append('svg')
         .attr('width', fullWidth)
         .attr('height', fullHeight)
         // this g is where the bar chart will be drawn
         .append('g')
           // translate it to leave room for the left and top margins
-          .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
+          .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')'); 
 
 
       var schoolNameScale = d3.scaleBand().domain(schoolNames).range([0, height]).paddingInner(0.1);

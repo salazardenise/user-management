@@ -21,6 +21,7 @@ import { ScoresListResolve } from './scores-list/scores-list.resolve.service';
 // used ngx-pagination library for pagination (ref: https://www.npmjs.com/package/ngx-pagination)
 import {NgxPaginationModule} from 'ngx-pagination';
 import { VenuesComponent } from './venues/venues.component';
+import { VenuesMapComponent } from './venues-map/venues-map.component';
 
 const routes: Routes = [
   {
@@ -58,7 +59,8 @@ const routes: Routes = [
     ScoresVisualComponent,
     ScoresVisualMathComponent,
     ScoresVisualWritingComponent,
-    VenuesComponent
+    VenuesComponent,
+    VenuesMapComponent
   ],
   imports: [
     BrowserModule,

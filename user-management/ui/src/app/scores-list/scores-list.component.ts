@@ -22,9 +22,9 @@ import { ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./scores-list.component.css']
 })
 export class ScoresListComponent implements OnInit {
-  p: number = 1;
-  scores: Score[];
-  /*
+  //p: number = 1;
+  //scores: Score[];
+  
   score1 = {dbn: '01M292',
             num_of_sat_test_takers: '29',
             sat_critical_reading_avg_score: '355',
@@ -60,7 +60,7 @@ export class ScoresListComponent implements OnInit {
             sat_writing_avg_score: '384',
             school_name: 'MARTA VALLE HIGH SCHOOL'};
   scores = [this.score1, this.score2, this.score3, this.score4, this.score5];
-  */
+  
   constructor(private searchService: ScoresListService,
               private route: ActivatedRoute,) {
    }
@@ -71,10 +71,10 @@ export class ScoresListComponent implements OnInit {
       .subscribe((response) => {
         this.scores = response});  
         */
-       
+       /*
       this.route.data.subscribe((data: {scores : Score[]}) => {
         this.scores = data.scores;
       })
-      
+      */
   }
 }

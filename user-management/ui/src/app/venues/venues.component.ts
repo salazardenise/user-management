@@ -14,9 +14,11 @@ export class VenuesComponent implements OnInit {
   constructor(private venuesService: VenuesService) { }
 
   ngOnInit() {
+    /*
     this.venuesService.getScores()
       .subscribe((response) => {
         this.venues = response}); 
+        */
   }
 
 }
