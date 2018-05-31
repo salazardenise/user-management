@@ -10,7 +10,7 @@ export class VenuesService {
     constructor(private http: HttpClient) {
     }
 
-    getScores() {
+    getVenues() {
         return this.http.get<Venue[]>(this.venues_url);
     }
 }

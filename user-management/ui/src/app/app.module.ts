@@ -1,3 +1,4 @@
+import { VenuesResolve } from './venues/venues.resolve.service';
 import { VenuesService } from './venues/venues.service';
 import { UsersService } from './users.service';
 import { BrowserModule } from '@angular/platform-browser';
@@ -73,7 +74,8 @@ const routes: Routes = [
               ScoresListService,
               D3Service,
               ScoresListResolve,
-              VenuesService],
+              VenuesService,
+              VenuesResolve],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
