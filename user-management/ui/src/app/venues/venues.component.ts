@@ -10,7 +10,7 @@ import { dummyVenues } from './../dummy-values/dummy-venues';
   styleUrls: ['./venues.component.css']
 })
 export class VenuesComponent implements OnInit {
-
+  p: number = 1;
   venues: Venue[];
 
   // dummy values
