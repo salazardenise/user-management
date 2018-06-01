@@ -30,4 +30,13 @@ describe('VenuesComponent', () => {
     fixture.detectChanges();
   });
 
+  /*
+  it('should render Times Square Entertainmet Venues in the table caption', async(() => {
+    const fixture = TestBed.createComponent(VenuesComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('caption').textContent).toContain('Times Square Entertainmet Venues');
+  }));
+  */
+
 });

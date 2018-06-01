@@ -9,6 +9,7 @@ import { ScoresListComponent } from './scores-list.component';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ScoresListService } from './scores-list.service';
 import { RouterTestingModule } from '@angular/router/testing';
+import { ViewChild, Component } from '@angular/core';
 
 describe('ScoresListComponent', () => {
   let component: ScoresListComponent;
@@ -34,11 +35,20 @@ describe('ScoresListComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
+
 /*
   it('should create', () => {
     const fixture = TestBed.createComponent(ScoresListComponent);
     const app = fixture.debugElement.componentInstance;
     expect(component).toBeTruthy();
   });
+  */
+ /*
+  it('should render 2012 SAT Scores in the table caption', async(() => {
+    const fixture = TestBed.createComponent(ScoresListComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('caption').textContent).toContain('2012 SAT Scores');
+  }));
   */
 });
