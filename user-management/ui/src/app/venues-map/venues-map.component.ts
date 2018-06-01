@@ -29,7 +29,7 @@ export class VenuesMapComponent implements OnInit {
 
   addMarkers() {
     var i, markerPosition, markerToMap;
-    var goldStar = {
+    var traingle = {
       path: 'M 100 100 L 300 100 L 200 300 z',
       fillColor: 'purple',
       fillOpacity: 0.8,
@@ -38,12 +38,15 @@ export class VenuesMapComponent implements OnInit {
       strokeWeight: 2
     };
     for (i = 0; i < this.venues.length; i++) {
+      //console.log(typeof(this.venues[i].latitude));
+      let markerLat = Number(this.venues[i].latitude);
+      let markerLng = Number(this.venues[i].longitude);
       markerToMap = new google.maps.Marker({
-        position: {lat: this.venues[i].latitude, lng: this.venues[i].longitude}, 
+        position: {lat: markerLat, lng: markerLng}, 
         map: this.map,
         animation: google.maps.Animation.DROP,
         //icon: image,
-        icon: goldStar,
+        icon: traingle,
         title: this.venues[i].company_name});
       markerToMap.setMap(this.map);
       var contentString = '<h3>'+ this.venues[i].company_name+ '</h3>' +
