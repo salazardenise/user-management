@@ -11,23 +11,30 @@ import { dummyVenues } from './../dummy-values/dummy-venues';
 })
 export class VenuesComponent implements OnInit {
   p: number = 1;
-  venues: Venue[];
+  venuesLoaded: Promise<boolean>;
+  //venues: Venue[];
 
   // dummy values
-  //venues = dummyVenues;
+  venues = dummyVenues;
 
   constructor(private venuesService: VenuesService,
               private route: ActivatedRoute) { }
 
   ngOnInit() {
-    /*
+    
     this.venuesService.getVenues()
       .subscribe((response) => {
-      this.venues = response}); 
-    */
+      this.venues = response;
+      console.log("venues obtained");
+      this.venuesLoaded = Promise.resolve(true);
+    }); 
+    
+   /*
     this.route.data.subscribe((data: {venues : Venue[]}) => {
-    this.venues = data.venues;
-  })
+      this.venues = data.venues;
+      console.log("venues obtained");
+      this.venuesLoaded = Promise.resolve(true);
+  })*/
       
   }
 
