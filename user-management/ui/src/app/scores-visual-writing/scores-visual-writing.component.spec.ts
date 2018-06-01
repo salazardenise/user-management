@@ -1,5 +1,5 @@
+import { D3Service } from 'd3-ng2-service';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ScoresVisualWritingComponent } from './scores-visual-writing.component';
 
 describe('ScoresVisualWritingComponent', () => {
@@ -8,7 +8,8 @@ describe('ScoresVisualWritingComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ScoresVisualWritingComponent ]
+      declarations: [ ScoresVisualWritingComponent ],
+      providers: [ D3Service ]
     })
     .compileComponents();
   }));
@@ -17,9 +18,5 @@ describe('ScoresVisualWritingComponent', () => {
     fixture = TestBed.createComponent(ScoresVisualWritingComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
-  });
-
-  it('should create', () => {
-    expect(component).toBeTruthy();
   });
 });

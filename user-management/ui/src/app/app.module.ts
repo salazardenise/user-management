@@ -70,6 +70,9 @@ const routes: Routes = [
     FormsModule,
     NgxPaginationModule
   ],
+  exports: [
+    NgxPaginationModule
+  ],
   providers: [UsersService,
               ScoresListService,
               D3Service,
