@@ -23,10 +23,34 @@ describe('AppComponent', () => {
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('User Maganement System');
   }));
-  it('should render title in a a tag', async(() => {
+  it('should render title in an a tag', async(() => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('a').textContent).toContain('User Maganement System');
+  }));
+  it('should render Home in an a tag', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('ul li:nth-child(1) a').textContent).toContain('Home');
+  }));
+  it('should render Create User in an a tag', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('ul li:nth-child(2) a').textContent).toContain('Create User');
+  }));
+  it('should render Scores in an a tag', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('ul li:nth-child(3) a').textContent).toContain('Scores');
+  }));
+  it('should render Venues in an a tag', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('ul li:nth-child(4) a').textContent).toContain('Venues');
   }));
 });

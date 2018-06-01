@@ -33,4 +33,34 @@ describe('UpdateUserFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should spy on update user button', () => {
+    spyOn(component, 'updateTheUser');
+
+    let button = fixture.debugElement.nativeElement.querySelector('#update-user-submit');
+    button.click();
+
+    fixture.whenStable().then( () => {
+      expect(component.updateTheUser).toHaveBeenCalled();
+    })
+  });
+
+  it('should spy on delete user button', () => {
+    spyOn(component, 'deleteTheUser');
+
+    let button = fixture.debugElement.nativeElement.querySelector('#delete-user-button');
+    button.click();
+
+    fixture.whenStable().then( () => {
+      expect(component.deleteTheUser).toHaveBeenCalled();
+    })
+  });
+
+  it('should render Update User in an h2 tag', async(() => {
+    const fixture = TestBed.createComponent(UpdateUserFormComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h2').textContent).toContain('Update User');
+  }));
+
 });

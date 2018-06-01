@@ -44,7 +44,7 @@ describe('UsersService', () =>{
         });
     
         // The following `expectOne()` will match the request's URL.    
-        let mock = httpMock.expectOne('/api/users');
+        let mock = httpMock.expectOne('http://localhost:8080/api/users');
 
         // Assert that the request is a GET.
         expect(mock.request.method).toBe("GET");
@@ -61,7 +61,7 @@ describe('UsersService', () =>{
             console.log(res);
             expect(res[0]).toEqual(this.dummyUsers[0]);
         });
-        let mock = httpMock.expectOne(`/api/users/${id}`);
+        let mock = httpMock.expectOne(`http://localhost:8080/api/users/${id}`);
         expect(mock.request.method).toBe("GET");
         mock.flush(this.dummyUsers);
     }))
@@ -72,7 +72,7 @@ describe('UsersService', () =>{
             expect(res).toEqual(this.dummyUsers[0]);
         });
     
-        let mock = httpMock.expectOne('/api/users');
+        let mock = httpMock.expectOne('http://localhost:8080/api/users');
         expect(mock.request.method).toBe("POST");
         mock.flush(this.dummyUsers[0]);
         }));
@@ -84,7 +84,7 @@ describe('UsersService', () =>{
             expect(res).toEqual('OK')
         });
     
-        let mock = httpMock.expectOne(`/api/users/${id}`);
+        let mock = httpMock.expectOne(`http://localhost:8080/api/users/${id}`);
         expect(mock.request.method).toBe("DELETE");
         mock.flush('OK');
     }));

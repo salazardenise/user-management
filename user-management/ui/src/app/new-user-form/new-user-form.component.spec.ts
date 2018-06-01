@@ -33,4 +33,22 @@ describe('NewUserFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should spy on submit button', () => {
+    spyOn(component, 'createUser');
+
+    let button = fixture.debugElement.nativeElement.querySelector('#new-user-submit');
+    button.click();
+
+    fixture.whenStable().then( () => {
+      expect(component.createUser).toHaveBeenCalled();
+    })
+  });
+
+  it('should render Create New User in an h2 tag', async(() => {
+    const fixture = TestBed.createComponent(NewUserFormComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('h2').textContent).toContain('Create New User');
+  }));
 });
