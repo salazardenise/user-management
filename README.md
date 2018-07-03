@@ -11,11 +11,21 @@ User stories used to create this application can be found at this [Trello board]
 ## How to visit the app
 
 The app was deployed on AWS and can be found here: http://web-management-app.s3-website.us-east-2.amazonaws.com/
+Due to high costs of keeping EC2 instances running, only frontend UI is up and running at link provided. For full experience, download this repo and start the app locally.
+
+## How to start the app
+
+All components of the app, including the microservices and the UI, can be started via a docker-compose command. Make sure Docker is up and running.
+```
+docker-compose up
+```
 
 ## How to run feature tests
+
 Once application is started, run feature tests at user-management/src/test/java/com/example/usermanagement/UsersApiFeatureTest.java
 
-To end the app, run:
+## How to end the app
+
 ```
 control+C
 docker-compose down
